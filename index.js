@@ -4,8 +4,24 @@ const hearts = document.querySelectorAll(".heartClick");
 
 for (let heart of hearts) {
   heart.addEventListener("click", function () {
-    const currentLife = document.getElementById("heartCount").innerText;
-    const lifeIncrease = Number(currentLife) + 1;
-    document.getElementById("heartCount").innerText = lifeIncrease;
+    let currentLife = parseInt(document.getElementById("heartCount").innerText);
+    currentLife += 1;
+    document.getElementById("heartCount").innerText = currentLife;
   });
 }
+
+// Call Button Section 
+
+// Reduce Coin Functionalities
+
+function CallBtnClick(event) {
+  let availableCoin = Number(document.getElementById("totalCoin").innerText);
+
+  if (availableCoin < 20) {
+    alert("Not enough coins");
+    return;
+  }
+  availableCoin -= 20;
+  document.getElementById("totalCoin").innerText = availableCoin;
+
+  
