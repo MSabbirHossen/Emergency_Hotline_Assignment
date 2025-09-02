@@ -10,7 +10,7 @@ for (let heart of hearts) {
   });
 }
 
-// Call Button Section 
+// Call Button Section
 
 // Reduce Coin Functionalities
 
@@ -24,4 +24,21 @@ function CallBtnClick(event) {
   availableCoin -= 20;
   document.getElementById("totalCoin").innerText = availableCoin;
 
-  
+  //  Call Alert Functionalities
+
+  let divAdder = event.currentTarget;
+  const temp = divAdder.id;
+
+  let heading =
+    document.getElementById(temp).parentElement.parentElement.children[1]
+      .children[0].innerText;
+  let paragraph =
+    document.getElementById(temp).parentElement.parentElement.children[1]
+      .children[2].innerText;
+
+  let alertHeading =
+    document.getElementById(temp).parentElement.parentElement.children[1]
+      .children[1].innerText;
+
+  alert(" 📞 Calling " + heading + " " + paragraph);
+}
