@@ -10,15 +10,36 @@ for (let heart of hearts) {
   });
 }
 
+// Copy Button Section
+
+function CopyBtnClick(id) {
+  let button = id.currentTarget;
+  let receive =
+    button.parentElement.parentElement.children[1].children[2].innerText;
+  navigator.clipboard.writeText(receive);
+  let storageCopy = document.getElementById("copyButton").innerText;
+  document.getElementById("copyButton").innerText = Number(storageCopy) + 1;
+}
+
+document.getElementById("copyButton-1").addEventListener("click", CopyBtnClick);
+document.getElementById("copyButton-2").addEventListener("click", CopyBtnClick);
+document.getElementById("copyButton-3").addEventListener("click", CopyBtnClick);
+document.getElementById("copyButton-4").addEventListener("click", CopyBtnClick);
+document.getElementById("copyButton-5").addEventListener("click", CopyBtnClick);
+document.getElementById("copyButton-6").addEventListener("click", CopyBtnClick);
+document.getElementById("copyButton-7").addEventListener("click", CopyBtnClick);
+document.getElementById("copyButton-8").addEventListener("click", CopyBtnClick);
+document.getElementById("copyButton-9").addEventListener("click", CopyBtnClick);
+
 // Call Button Section
 
 // Reduce Coin Functionalities
 
-function CallBtnClick(event) {
-  let availableCoin = Number(document.getElementById("totalCoin").innerText);
+function CallBtnClick(id) {
+  let availableCoin = parseInt(document.getElementById("totalCoin").innerText);
 
   if (availableCoin < 20) {
-    alert("Not enough coins");
+    alert("Insufficient coins! You need at least 20 coins to make a call.");
     return;
   }
   availableCoin -= 20;
@@ -26,7 +47,7 @@ function CallBtnClick(event) {
 
   //  Call Alert Functionalities
 
-  let divAdder = event.currentTarget;
+  let divAdder = id.currentTarget;
   const temp = divAdder.id;
 
   let heading =
@@ -42,7 +63,7 @@ function CallBtnClick(event) {
 
   alert(" 📞 Calling " + heading + " " + paragraph);
 
-  // Call History section
+  // Dynamic Call History section
 
   let newDiv = document.createElement("div");
   newDiv.innerHTML = `<div
@@ -85,3 +106,12 @@ document.getElementById("callButton-6").addEventListener("click", CallBtnClick);
 document.getElementById("callButton-7").addEventListener("click", CallBtnClick);
 document.getElementById("callButton-8").addEventListener("click", CallBtnClick);
 document.getElementById("callButton-9").addEventListener("click", CallBtnClick);
+
+// // clear button task
+
+// const ClearBtn = document
+//   .getElementById("clear")
+//   .addEventListener("click", function () {
+//     document.getElementById("massage-store-div").innerHTML = ``;
+//   });
+// console.log(ClearBtn);
