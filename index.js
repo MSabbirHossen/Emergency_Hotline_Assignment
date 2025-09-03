@@ -107,11 +107,10 @@ document.getElementById("callButton-7").addEventListener("click", CallBtnClick);
 document.getElementById("callButton-8").addEventListener("click", CallBtnClick);
 document.getElementById("callButton-9").addEventListener("click", CallBtnClick);
 
-// // clear button task
+// Call History Clear Functionalities
 
-// const ClearBtn = document
-//   .getElementById("clear")
-//   .addEventListener("click", function () {
-//     document.getElementById("massage-store-div").innerHTML = ``;
-//   });
-// console.log(ClearBtn);
+const ClearBtn = document
+  .getElementById("clear")
+  .addEventListener("click", function () {
+    document.getElementById("Call_History_Clear").innerHTML = ``;
+  });
