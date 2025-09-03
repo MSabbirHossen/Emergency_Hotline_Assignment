@@ -19,6 +19,7 @@ function CopyBtnClick(id) {
   navigator.clipboard.writeText(receive);
   let storageCopy = document.getElementById("copyButton").innerText;
   document.getElementById("copyButton").innerText = Number(storageCopy) + 1;
+  alert("Copied successfully!");
 }
 
 document.getElementById("copyButton-1").addEventListener("click", CopyBtnClick);
